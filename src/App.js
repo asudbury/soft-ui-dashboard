@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
-import { Route, Switch, Navigate , useLocation } from "react-router-dom";
+import { Route, Routes, Navigate , useLocation } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -151,10 +151,10 @@ export default function App() {
           </>
         )}
         {layout === "vr" && <Configurator />}
-        <Switch>
+        <Routes>
           {getRoutes(routes)}
           <Navigate from="*" to="/dashboard" />
-        </Switch>
+        </Routes>
       </ThemeProvider>
     </CacheProvider>
   ) : (
@@ -175,10 +175,10 @@ export default function App() {
         </>
       )}
       {layout === "vr" && <Configurator />}
-      <Switch>
+      <Routes>
         {getRoutes(routes)}
         <Navigate from="*" to="/dashboard" />
-      </Switch>
+      </Routes>
     </ThemeProvider>
   );
 }
